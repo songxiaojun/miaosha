@@ -11,9 +11,9 @@ spring:
 
 # druid
   datasource:
-      url: jdbc:mysql://112.124.116.67:3306/miaosha?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&allowMultiQueries=true
-      username:
-      password:
+      url: jdbc:mysql://111.230.131.178:3306/miaosha?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&allowMultiQueries=true
+      username: root
+      password: 12345678
       driver-class-name: com.mysql.jdbc.Driver
       type: com.alibaba.druid.pool.DruidDataSource
       filters: stat
