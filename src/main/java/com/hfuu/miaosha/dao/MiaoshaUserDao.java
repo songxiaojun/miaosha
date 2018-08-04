@@ -6,6 +6,8 @@ import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
+import java.util.List;
+
 
 @Mapper
 public interface MiaoshaUserDao {
@@ -15,4 +17,7 @@ public interface MiaoshaUserDao {
 
 	@Update("update miaosha_user set password = #{password} where id = #{id}")
 	public void update(MiaoshaUser toBeUpdate);
+
+	@Select("select * from miaosha_user")
+	public List<MiaoshaUser> list();
 }

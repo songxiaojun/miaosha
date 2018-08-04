@@ -9,6 +9,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/user")
 public class UserController {
@@ -22,6 +24,13 @@ public class UserController {
     @ResponseBody
     public Result<MiaoshaUser> info(Model model, MiaoshaUser user) {
         return Result.success(user);
+    }
+
+    @RequestMapping("/list")
+    @ResponseBody
+    public List<MiaoshaUser> list(){
+        List<MiaoshaUser> list = userService.list();
+        return list;
     }
     
 }

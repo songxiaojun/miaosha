@@ -33,7 +33,6 @@ spring:
 #static
   resources:
     add-mappings: true
-    cache-period: 3600
     chain:
       cache: true
       enabled: true
