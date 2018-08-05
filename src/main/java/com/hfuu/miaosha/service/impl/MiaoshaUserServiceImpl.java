@@ -52,7 +52,8 @@ public class MiaoshaUserServiceImpl implements MiaoshaUserService {
         //验证密码
         String dbPass = user.getPassword();
         String saltDB = user.getSalt();
-        String calcPass = MD5Util.formPassToDBPass(formPass, saltDB);
+        //todo md5 加密
+        String calcPass =formPass;
         if(!calcPass.equals(dbPass)) {
             throw new GlobalException(CodeMsg.PASSWORD_ERROR);
         }

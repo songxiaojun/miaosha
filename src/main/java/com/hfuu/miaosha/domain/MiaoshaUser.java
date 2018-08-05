@@ -7,7 +7,7 @@ import java.util.Date;
 @Setter
 @Getter
 public class MiaoshaUser {
-    private Integer id;
+    private Long id;
     private String nickname;
     private String password;
     private String salt;
