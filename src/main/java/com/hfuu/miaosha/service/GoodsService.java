@@ -12,5 +12,5 @@ public interface GoodsService {
     public boolean reduceStock(GoodsVo goods);
 
     public void resetStock(List<GoodsVo> goodsList);
-    }
+
 }
