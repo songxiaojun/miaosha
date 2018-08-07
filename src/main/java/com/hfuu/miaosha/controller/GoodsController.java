@@ -46,7 +46,6 @@ public class GoodsController {
 	 * QPS:2884, load:5 
 	 * */
     @RequestMapping(value="/to_list", produces="text/html")
-    @ResponseBody
 	public String list(Model model,MiaoshaUser user) {
 		model.addAttribute("user", user);
 		//查询商品列表

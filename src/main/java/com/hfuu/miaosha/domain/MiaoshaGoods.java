@@ -7,7 +7,7 @@ import java.util.Date;
 @Setter
 @Getter
 public class MiaoshaGoods {
-    private Long id;
+    private Integer id;
     private Long goodsId;
     private Integer stockCount;
     private Date startDate;
