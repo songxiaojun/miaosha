@@ -10,6 +10,7 @@ import com.hfuu.miaosha.service.MiaoshaUserService;
 import com.hfuu.miaosha.util.MD5Util;
 import com.hfuu.miaosha.util.UUIDUtil;
 import com.hfuu.miaosha.vo.LoginVo;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Service;
@@ -21,7 +22,7 @@ import java.util.List;
 
 @Service
 public class MiaoshaUserServiceImpl implements MiaoshaUserService {
-    public static final String COOKI_NAME_TOKEN = "token";
+
     @Autowired
     private MiaoshaUserDao miaoshaUserDao;
     @Autowired
@@ -61,6 +62,17 @@ public class MiaoshaUserServiceImpl implements MiaoshaUserService {
         String token= UUIDUtil.uuid();
         addCookie(response, token, user);
         return token;
+    }
+    public MiaoshaUser getByToken(HttpServletResponse response, String token) {
+        if(StringUtils.isEmpty(token)) {
+            return null;
+        }
+        MiaoshaUser user = redisService.get(MiaoshaUserKey.token, token, MiaoshaUser.class);
+        //延长有效期
+        if(user != null) {
+            addCookie(response, token, user);
+        }
+        return user;
     }
 
     private MiaoshaUser getById(long id) {
