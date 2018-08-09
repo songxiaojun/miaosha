@@ -22,7 +22,7 @@ import java.util.List;
 
 @Service
 public class MiaoshaUserServiceImpl implements MiaoshaUserService {
-
+    public static final String COOKI_NAME_TOKEN = "token";
     @Autowired
     private MiaoshaUserDao miaoshaUserDao;
     @Autowired

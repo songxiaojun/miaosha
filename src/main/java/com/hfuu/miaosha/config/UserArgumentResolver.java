@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.hfuu.miaosha.domain.MiaoshaUser;
 import com.hfuu.miaosha.service.MiaoshaUserService;
+import com.hfuu.miaosha.service.impl.MiaoshaUserServiceImpl;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.MethodParameter;
@@ -33,8 +34,8 @@ public class UserArgumentResolver implements HandlerMethodArgumentResolver {
 		HttpServletRequest request = webRequest.getNativeRequest(HttpServletRequest.class);
 		HttpServletResponse response = webRequest.getNativeResponse(HttpServletResponse.class);
 		
-		String paramToken = request.getParameter(userService.COOKI_NAME_TOKEN);
-		String cookieToken = getCookieValue(request, userService.COOKI_NAME_TOKEN);
+		String paramToken = request.getParameter(MiaoshaUserServiceImpl.COOKI_NAME_TOKEN);
+		String cookieToken = getCookieValue(request, MiaoshaUserServiceImpl.COOKI_NAME_TOKEN);
 		if(StringUtils.isEmpty(cookieToken) && StringUtils.isEmpty(paramToken)) {
 			return null;
 		}
