@@ -54,7 +54,7 @@ public class GoodsController {
 		return "goods_list";
 	}
 
-	@RequestMapping("/to_detail/{goodsId}")
+	@RequestMapping("/detail/{goodsId}")
 	public String detail(Model model,MiaoshaUser user,
 						 @PathVariable("goodsId")long goodsId) {
 		model.addAttribute("user", user);

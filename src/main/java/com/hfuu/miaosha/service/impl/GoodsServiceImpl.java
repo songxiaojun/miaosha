@@ -19,7 +19,7 @@ public class GoodsServiceImpl implements GoodsService {
 
     @Override
     public GoodsVo getGoodsVoByGoodsId(long goodsId) {
-        return null;
+        return goodsDao.getGoodsVoByGoodsId(goodsId);
     }
 
     @Override
