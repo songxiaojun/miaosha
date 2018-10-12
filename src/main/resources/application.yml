@@ -51,14 +51,14 @@ mybatis:
 #redis
 redis:
   host: 112.124.116.67
-  password: defa@123
+  password:
   port: 6379
   timeout: 10
   poolMaxTotal: 1000
   poolMaxIdle: 500
   poolMaxWait: 500
 
-#kafka
+#rabbitmq
 
 
 
